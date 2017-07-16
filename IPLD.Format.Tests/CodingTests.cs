@@ -12,15 +12,7 @@ namespace IPLD.Format.Tests
     {
         public CodingTests()
         {
-            // @todo: we've just opened up the constructor in Prefix so we can create
-            // a prefix without parsing a byte array because this does not seem to work.
-            // It's currently in the deployment process.  -tabrath 17/7/17
-
-            var prefix = new Mock<Prefix>();
-            prefix.Setup(p => p.Codec).Returns(MulticodecCode.Raw);
-            prefix.Setup(p => p.Version).Returns(1);
-            prefix.Setup(p => p.MultihashType).Returns(HashType.ID);
-            prefix.Setup(p => p.MultihashLength).Returns(0);
+            var prefix = new Prefix(1, MulticodecCode.Raw, HashType.ID, 0);
 
             var node = new Mock<INode>();
             node.Setup(n => n.Links).Returns(Array.Empty<Link>());
@@ -32,7 +24,7 @@ namespace IPLD.Format.Tests
             node.Setup(n => n.RawData).Returns(Array.Empty<byte>());
             node.Setup(n => n.Size()).Returns(0);
             node.Setup(n => n.Stat()).Returns(new NodeStat());
-            node.Setup(n => n.Cid).Returns(() => prefix.Object.Sum(null));
+            node.Setup(n => n.Cid).Returns(() => prefix.Sum(Array.Empty<byte>()));
 
             BlockDecoder.Default.Register(MulticodecCode.Raw, b =>
             {
@@ -47,12 +39,7 @@ namespace IPLD.Format.Tests
         [Fact]
         public void Decode_GivenBlockWithCid_ReturnsCorrectNode()
         {
-            var prefix = new Mock<Prefix>();
-            prefix.Setup(i => i.Version).Returns(1);
-            prefix.Setup(i => i.Codec).Returns(MulticodecCode.Raw);
-            prefix.Setup(i => i.MultihashType).Returns(HashType.ID);
-            prefix.Setup(i => i.MultihashLength).Returns(0);
-            var id = prefix.Object.Sum(null);
+            var id = new Prefix(1, MulticodecCode.Raw, HashType.ID, 0).Sum(Array.Empty<byte>());
 
             var block = new BasicBlock(null, id);
             var node = BlockDecoder.Default.Decode(block);

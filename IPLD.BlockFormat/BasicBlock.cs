@@ -13,12 +13,12 @@ namespace IPLD.BlockFormat
 
         public BasicBlock(byte[] data, Cid cid = null)
         {
+            RawData = data ?? Array.Empty<byte>();
 #if DEBUG
-            var chk = cid?.Prefix.Sum(data);
+            var chk = cid?.Prefix.Sum(RawData);
             if (!chk?.Equals(cid) ?? false)
                 throw new InvalidHashException(chk, cid);
 #endif
-            RawData = data ?? Array.Empty<byte>();
             Cid = cid ?? new Cid(RawData.Hash());
         }
 
