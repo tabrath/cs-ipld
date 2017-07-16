@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPLD.BlockFormat", "IPLD.BlockFormat\IPLD.BlockFormat.csproj", "{E091FD74-3518-4A6B-B765-0AC00B4A1919}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPLD.BlockFormat", "IPLD.BlockFormat\IPLD.BlockFormat.csproj", "{E091FD74-3518-4A6B-B765-0AC00B4A1919}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPLD.BlockFormat.Tests", "IPLD.BlockFormat.Tests\IPLD.BlockFormat.Tests.csproj", "{F211CABD-D8E1-4902-B3BE-369BA36E80EE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IPLD.Format", "IPLD.Format\IPLD.Format.csproj", "{79329D23-111F-4F59-8538-D165D03E77D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPLD.Format.Tests", "IPLD.Format.Tests\IPLD.Format.Tests.csproj", "{AAEC1CA6-706D-4649-93F1-BDE655CC8C3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{E091FD74-3518-4A6B-B765-0AC00B4A1919}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E091FD74-3518-4A6B-B765-0AC00B4A1919}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E091FD74-3518-4A6B-B765-0AC00B4A1919}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F211CABD-D8E1-4902-B3BE-369BA36E80EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F211CABD-D8E1-4902-B3BE-369BA36E80EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F211CABD-D8E1-4902-B3BE-369BA36E80EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F211CABD-D8E1-4902-B3BE-369BA36E80EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79329D23-111F-4F59-8538-D165D03E77D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79329D23-111F-4F59-8538-D165D03E77D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79329D23-111F-4F59-8538-D165D03E77D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79329D23-111F-4F59-8538-D165D03E77D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAEC1CA6-706D-4649-93F1-BDE655CC8C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAEC1CA6-706D-4649-93F1-BDE655CC8C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAEC1CA6-706D-4649-93F1-BDE655CC8C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAEC1CA6-706D-4649-93F1-BDE655CC8C3E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
