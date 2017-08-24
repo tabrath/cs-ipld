@@ -2,6 +2,8 @@
 {
     public class NodeStat
     {
+        public static readonly NodeStat Empty = new NodeStat();
+
         public string Hash { get; set; }
         public int NumLinks { get; set; }
         public int BlockSize { get; set; }

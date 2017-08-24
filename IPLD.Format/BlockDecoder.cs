@@ -26,7 +26,7 @@ namespace IPLD.Format
             if (block is INode)
                 return (INode) block;
 
-            var type = block.Cid.Type;
+            var type = block.Cid().Type;
             if (!_decoders.TryGetValue(type, out Func<IBlock, INode> decoder))
                 throw new NotSupportedException($"Unrecognized object type: {type}");
 

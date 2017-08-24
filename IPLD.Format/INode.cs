@@ -6,7 +6,7 @@ namespace IPLD.Format
     {
         (Link, string[]) ResolveLink(string[] path);
         INode Copy();
-        Link[] Links { get; }
+        Link[] Links();
         NodeStat Stat();
         ulong Size();
     }

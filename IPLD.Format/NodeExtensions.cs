@@ -11,7 +11,7 @@
             return new Link
             {
                 Size = size,
-                Cid = node.Cid
+                Cid = node.Cid()
             };
         }
     }

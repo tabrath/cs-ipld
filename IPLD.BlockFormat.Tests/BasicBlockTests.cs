@@ -39,7 +39,7 @@ namespace IPLD.BlockFormat.Tests
             var data = Encoding.UTF8.GetBytes("some data");
             var block = new BasicBlock(data);
 
-            Assert.Equal(data, block.RawData);
+            Assert.Equal(data, block.RawData());
         }
 
         [Fact]
@@ -57,7 +57,7 @@ namespace IPLD.BlockFormat.Tests
         {
             var data = Encoding.UTF8.GetBytes("yet another data");
             var block = new BasicBlock(data);
-            var cid = block.Cid;
+            var cid = block.Cid();
 
             Assert.Equal(block.Multihash, cid.Hash);
         }
